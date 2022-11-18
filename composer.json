@@ -1,0 +1,32 @@
+{
+    "name": "wooturk/category",
+    "description": "Wooturk category",
+    "keywords": [
+        "wooturk",
+        "category"
+    ],
+    "homepage": "https://github.com/wooturk/category",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ahmet Hamdi Bayrak",
+            "email": "ahmethamdibayrak@hotmail.com",
+            "homepage": "https://wooturk.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/wooturk/category"
+    },
+    "require": {
+        "php": "^7.2 || ^8.0",
+        "ext-xmlwriter": "*",
+        "ext-dom": "*",
+        "ext-tokenizer": "*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    }
+}
