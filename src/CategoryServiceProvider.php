@@ -23,13 +23,13 @@ class CategoryServiceProvider extends ServiceProvider
 	 */
 	public function boot()
 	{
-		Route::get('/user', [UserController::class, 'index']);
-		Route::post('/user', [UserController::class, 'post']);
-		Route::group(['middleware' => ['auth:sanctum']], function(){
-			Route::get('/users', [UserController::class, 'list']);
-			Route::get('/user/{id}', [UserController::class, 'get']);
-			Route::put('/user/{id}', [UserController::class, 'put']);
-			Route::delete('/user/{id}', [UserController::class, 'delete']);
+		Route::get('/category', [CategoryController::class, 'index'])->name('category-index');
+		Route::get('/categories', [CategoryController::class, 'list'])->name('category-list');
+		Route::get('/category/{id}', [CategoryController::class, 'get'])->name('category-get');
+		Route::group(['middleware' => ['auth:sanctum','wooturk.gateway']], function(){
+			Route::post('/category', [CategoryController::class, 'post'])->name('category-create');
+			Route::put('/category/{id}', [CategoryController::class, 'put'])->name('category-update');
+			Route::delete('/category/{id}', [CategoryController::class, 'delete'])->name('category-delete');
 		});
 	}
 }
